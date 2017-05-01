@@ -229,7 +229,7 @@ class Element(Base):
             return
 
         try:
-            self.type.validate(value, required=True)
+            self.type.validate(value)
         except exceptions.ValidationError as exc:
             raise exceptions.ValidationError(
                 "The element %s is not valid: %s" % (self.qname, exc.message),
